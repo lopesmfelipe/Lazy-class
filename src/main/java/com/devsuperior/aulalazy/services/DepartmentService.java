@@ -28,7 +28,7 @@ public class DepartmentService {
 
 	@Transactional(readOnly = true)
 	public List<EmployeeMinDTO> findEmployeesByDepartment(Long id) {
-		Optional<Department> result = repository.findById(id);
+		Optional<Departxment> result = repository.findById(id);
 		List<Employee> list = result.get().getEmployees();
 		return list.stream().map(x -> new EmployeeMinDTO(x)).toList();
 	}
